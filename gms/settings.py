@@ -94,15 +94,23 @@ WSGI_APPLICATION = 'gms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'gms_database',
+#         'USER': 'root',
+#         'PASSWORD': '',     
+#         'PORT': '3306',
+#         'HOST': 'localhost'
+#     }
+# }
+import dj_database_url
+
 DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gms_database',
-        'USER': 'root',
-        'PASSWORD': '',     
-        'PORT': '3306',
-        'HOST': 'localhost'
-    }
+    
+    'default': dj_database_url.config(
+        default = 'mysql://root:ExIUoOzmqdOZgbGNeAGMPHxrdSyTtWxT@autorack.proxy.rlwy.net:57627/railway'
+    )
 }
 
 
@@ -156,7 +164,9 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 AUTH_USER_MODEL = 'core.User'
 
-ALLOWED_HOSTS = ['192.168.1.78', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['192.168.1.78', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', 'railway.app']
+
 
 
 # Default primary key field type
