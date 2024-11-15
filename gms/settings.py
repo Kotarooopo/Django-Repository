@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jc-4x&9xut3tnere9p3l(tup+xd0vp*_5*1#)7i$z=anndrwli'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -94,27 +94,18 @@ WSGI_APPLICATION = 'gms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#      'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'gms_database',
-#         'USER': 'root',
-#         'PASSWORD': '',     
-#         'PORT': '3306',
-#         'HOST': 'localhost'
-#     }
-# }
-
-import pymysql
-pymysql.install_as_MySQLdb()
-
-import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default='mysql://root:ExIUoOzmqdOZgbGNeAGMPHxrdSyTtWxT@autorack.proxy.rlwy.net:57627/railway'
-    )
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gms_database',
+        'USER': 'root',
+        'PASSWORD': '',     
+        'PORT': '3306',
+        'HOST': 'localhost'
+    }
 }
+
+
 
 
 
@@ -168,8 +159,8 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 AUTH_USER_MODEL = 'core.User'
 
-# ALLOWED_HOSTS = ['192.168.1.78', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = ['.vercel.app', 'core.vercel.app', 'railway.app']
+ALLOWED_HOSTS = ['192.168.1.78', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['.vercel.app', 'core.vercel.app', 'railway.app']
 
 
 
