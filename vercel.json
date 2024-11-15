@@ -1,9 +1,9 @@
 {
     "builds": [
-      { "src": "gms/wsgi.py", "use": "@vercel/python" }
+      { "src": "core/wsgi.py", "use": "@vercel/python" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "gms/wsgi.py" }
+      { "src": "/(.*)", "dest": "core/wsgi.py" }
     ]
   }
   

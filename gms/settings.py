@@ -104,14 +104,18 @@ WSGI_APPLICATION = 'gms.wsgi.application'
 #         'HOST': 'localhost'
 #     }
 # }
+
+import pymysql
+pymysql.install_as_MySQLdb()
+
 import dj_database_url
 
 DATABASES = {
-    
     'default': dj_database_url.config(
-        default = 'mysql://root:ExIUoOzmqdOZgbGNeAGMPHxrdSyTtWxT@autorack.proxy.rlwy.net:57627/railway'
+        default='mysql://root:ExIUoOzmqdOZgbGNeAGMPHxrdSyTtWxT@autorack.proxy.rlwy.net:57627/railway'
     )
 }
+
 
 
 # Password validation
@@ -165,7 +169,8 @@ LOGOUT_REDIRECT_URL = '/login/'
 AUTH_USER_MODEL = 'core.User'
 
 # ALLOWED_HOSTS = ['192.168.1.78', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = ['.vercel.app', 'railway.app']
+ALLOWED_HOSTS = ['.vercel.app', 'core.vercel.app', 'railway.app']
+
 
 
 
